@@ -1,0 +1,21 @@
+<ion-view view-title="Tambah Berita">
+  <ion-content>
+    <div class="list">
+		<label class="item item-input">
+			<input type="text" ng-model="portalBerita.judul" placeholder="Judul">
+		</label>
+
+		<label class="item item-input">
+			<input type="text" ng-model="portalBerita.penulis" placeholder="Penulis">
+		</label>
+
+		<label class="item item-input">
+			<textarea placeholder="isi" ng-model="portalBerita.isi"></textarea>
+		</label>
+
+		<button class="button button-balanced button-block" ng-click="simpan(portalBerita);">
+			Save
+        </button>
+	</div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,59 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{portalBerita.judul}}">
+
+<ion-content class="padding">
+   <!-- <img ng-src="{{bukuTamu.foto}}" style="width: 120px; height: 120px">-->
+    <h3>Detail :</h3>
+    <p>
+        <font size="2" color="gray" >Judul : {{portalBerita.judul}}</font>
+    <br>
+        <font size="2" color="gray" >Isi : {{portalBerita.isi}}</font>
+    <br>
+        <font size="2" color="gray" >Penulis : {{portalBerita.penulis}}</font>
+    </p>
+    <button class="button button-balanced button-block" ng-click="editModal()">Edit </button>
+</ion-content>
+<script id="edit.html" type="text/ng-template">
+        <div class="modal">
+            <ion-header-bar class="bar-stable">
+                <button class="button button-icon icon ion-close-circled" ng-click="batal()"></button>
+                <h1 class="title"> Edit </h1>
+            </ion-header-bar>
+            <ion-content>
+                <form>
+                    <div class="list">
+                        <label class="item item-input">
+                        <span class="input-label">ID :</span>
+                            <input type="hidden" placeholder="{{portalBerita.id}}" ng-model="portalBerita.id" init-from-form>
+                            <p>{{portalBerita.id}}</p>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Judul :</span>
+                            <input type="text" placeholder="{{portalBerita.judul}}" ng-model="portalBerita.judul" init-from-form>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Penulis :</span>
+                            <input type="text" placeholder="{{portalBerita.penulis}}" ng-model="portalBerita.penulis" init-from-form>
+                        </label>
+                        <label class="item item-input">
+                        <span class="input-label">Isi :</span>
+                            <input type="text" placeholder="{{portalBerita.isi}}" ng-model="portalBerita.isi" init-from-form>
+                        </label>
+                        <button class="button button-balanced button-block" ng-click="ubah(portalBerita);">
+                            Save
+                        </button>
+                        <!--<button class="button button-balanced button-block" ng-click="hapus(portal_berita);">
+                            Delete-->
+                        </button>
+                    </div>
+                </form>
+        </ion-content>
+        </div>
+</script>
+
+</ion-view>
